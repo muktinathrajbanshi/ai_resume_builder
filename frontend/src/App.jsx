@@ -1,5 +1,14 @@
+import {Routes} from "react-router-dom"
+
+
 const App = () => {
-  return <div></div>;
+  return (
+    <>
+      <Routes>
+      
+      </Routes>
+    </>
+  )
 };
 
 export default App;
