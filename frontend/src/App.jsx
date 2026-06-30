@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import ResumeBuilder from "./pages/ResumeBuilder";
 import Login from "./pages/Login";
+import Layout from "./pages/Layout";
+import Preview from "./pages/Preview";
 
 const App = () => {
   return (
