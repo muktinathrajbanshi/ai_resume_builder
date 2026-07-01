@@ -260,8 +260,8 @@ const Hero = () => {
           </h1>
 
           <p className="max-w-md text-center text-base my-7">
-            Explore a growing library of over 320+ beautifully crafted,
-            customizable components.
+            Create, edit and download professional resumes with AI-powered
+            assistence.
           </p>
 
           {/* CTA Buttons */}
