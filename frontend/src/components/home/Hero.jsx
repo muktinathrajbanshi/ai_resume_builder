@@ -318,7 +318,7 @@ const Hero = () => {
             className="flex flex-wrap justify-between max-sm:justify-center gap-6 max-w-3xl w-full mx-auto py-4"
             id="logo-container"
           >
-            {companiesLogo.map((company, index) => (
+            {logos.map((company, index) => (
               <React.Fragment key={index}>{company.logo}</React.Fragment>
             ))}
           </div>
