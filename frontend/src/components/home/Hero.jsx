@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import Link from "react-router-dom";
 
 const Hero = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -266,8 +267,8 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-4 ">
-            <a
-              href="/"
+            <Link
+              to="/app"
               className="bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center transition-colors"
             >
               Get started
@@ -287,7 +288,7 @@ const Hero = () => {
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
-            </a>
+            </Link>
             <button className="flex items-center gap-2 border border-slate-400 hover:bg-indigo-50 transition rounded-full px-7 h-12 text-slate-700">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
