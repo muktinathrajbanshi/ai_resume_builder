@@ -13,8 +13,8 @@ const Testimonial = () => {
         <span>Testimonials</span>
       </div>
       <Title
-        title="Build your resume"
-        description="Our streamlined process helps you create a professional resume in minutes with intelligent AI-powered tools and features."
+        title="Don't just take our words"
+        description="Hear what our users say about us. We're always looking for ways to improve. If you have a positive experience with us, leave a review. "
       />
     </div>
   );
