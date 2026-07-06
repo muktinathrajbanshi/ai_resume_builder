@@ -17,7 +17,6 @@ const Dashboard = () => {
   const [showUploadResume, setShowUploadResume] = useState(false);
   const [title, setTitle] = useState("");
   const [resume, setResume] = useState(null);
-  const [resume, setResume] = useState(null);
   const [editResumeId, setEditResumeId] = useState(null);
 
   const navigate = useNavigate();
@@ -48,6 +47,7 @@ const Dashboard = () => {
 
         <div className="flex gap-4">
           <button
+            onClick={() => setShowCreateResume(true)}
             className="w-full bg-white sm:max-w-36 h-48 flex flex-col items-center justify-center
           rounded-lg gap-2 text-slate-600 border border-dashed border-slate-300 group hover:border-indigo-500
           hover:shadow-lg transition-all duration-300 cursor-pointer"
