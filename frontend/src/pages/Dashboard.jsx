@@ -4,6 +4,7 @@ import {
   PlusIcon,
   TrashIcon,
   UploadCloudIcon,
+  XIcon,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { dummyResumeData } from "../assets/assets";
@@ -111,6 +112,7 @@ const Dashboard = () => {
               <button className="w-full py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
                 Create Resume
               </button>
+              <XIcon className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors" />
             </div>
           </form>
         )}
