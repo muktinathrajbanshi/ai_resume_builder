@@ -11,6 +11,8 @@ import { dummyResumeData } from "../assets/assets";
 const Dashboard = () => {
   const colors = ["#9333ea", "#d97706", "#dc2626", "#0284c7", "#16a34a"];
   const [allResumes, setAllResumes] = useState([]);
+  const [showCreateResume, setShowCreateResume] = useState(false);
+  const [showUploadResume, setShowUploadResume] = useState(false);
 
   const loadAllResumes = async () => {
     setAllResumes(dummyResumeData);
@@ -94,6 +96,15 @@ const Dashboard = () => {
             );
           })}
         </div>
+
+        {showCreateResume && (
+          <form className="fixed inset-0 bg-black/70 backdrop-blur bg-opacity-50 z-10 flex items-center justify-center">
+            <div>
+              <h2>Create a Resume</h2>
+              <input type="text" placeholder="Enter resume title" />
+            </div>
+          </form>
+        )}
       </div>
     </div>
   );
