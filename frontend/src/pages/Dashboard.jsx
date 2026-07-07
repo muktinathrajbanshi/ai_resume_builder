@@ -3,6 +3,7 @@ import {
   PencilIcon,
   PlusIcon,
   TrashIcon,
+  UploadCloud,
   UploadCloudIcon,
   XIcon,
 } from "lucide-react";
@@ -26,6 +27,12 @@ const Dashboard = () => {
   };
 
   const createResume = async (event) => {
+    event.preventDefault();
+    setShowCreateResume(false);
+    navigate(`/app/builder/res123`);
+  };
+
+  const uploadResume = async (event) => {
     event.preventDefault();
     setShowCreateResume(false);
     navigate(`/app/builder/res123`);
@@ -58,6 +65,7 @@ const Dashboard = () => {
             </p>
           </button>
           <button
+            onClick={() => setShowUploadResume(true)}
             className="w-full bg-white sm:max-w-36 h-48 flex flex-col items-center justify-center
           rounded-lg gap-2 text-slate-600 border border-dashed border-slate-300 group hover:border-purple-500
           hover:shadow-lg transition-all duration-300 cursor-pointer"
@@ -171,7 +179,20 @@ const Dashboard = () => {
                   className="block text-sm text-slate-700"
                 >
                   Select resume file
-                  <div></div>
+                  <div
+                    className="flex flex-col items-center justify-center gap-2 border group text-slate-400
+                  border-slate-400 border-dashed rounded-md p-4 py-10 my-4 hover:border-green-500 hover:text-green-700
+                  cursor-pointer transition-colors"
+                  >
+                    {resume ? (
+                      <p className="text-green-700">{resume.name}</p>
+                    ) : (
+                      <>
+                        <UploadCloud className="size-14 stroke-1" />
+                        <p>Upload resume</p>
+                      </>
+                    )}
+                  </div>
                 </label>
               </div>
 
