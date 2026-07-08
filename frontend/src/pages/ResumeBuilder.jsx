@@ -1,7 +1,15 @@
 import { useParams, Link } from "react-router-dom";
 import { dummyResumeData } from "../assets/assets";
 import { useEffect, useState } from "react";
-import { ArrowLeftIcon, Briefcase, FileText, User } from "lucide-react";
+import {
+  ArrowLeftIcon,
+  Briefcase,
+  FileText,
+  FolderIcon,
+  GraduationCap,
+  Sparkles,
+  User,
+} from "lucide-react";
 
 const ResumeBuilder = () => {
   const { resumeId } = useParams();
@@ -28,10 +36,16 @@ const ResumeBuilder = () => {
     }
   };
 
+  const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+  const [removeBackground, setRemoveBackground] = useState(0);
+
   const sections = [
     { id: "personal", name: "Personal Info", icon: User },
     { id: "summary", name: "Summary", icon: FileText },
     { id: "experience", name: "Experience", icon: Briefcase },
+    { id: "education", name: "Education", icon: GraduationCap },
+    { id: "projects", name: "Projects", icon: FolderIcon },
+    { id: "skills", name: "Skills", icon: Sparkles },
   ];
 
   useEffect(() => {
