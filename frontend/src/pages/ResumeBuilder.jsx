@@ -5,6 +5,7 @@ import {
   ArrowLeftIcon,
   Briefcase,
   ChevronLeft,
+  ChevronRight,
   FileText,
   FolderIcon,
   GraduationCap,
@@ -95,9 +96,21 @@ const ResumeBuilder = () => {
                     hover:bg-gray-50"
                       disabled={activeSectionIndex === 0}
                     >
-                      <ChevronLeft className="szie-4" /> Previous
+                      <ChevronLeft className="size-4" /> Previous
                     </button>
                   )}
+                  <button
+                    onClick={() =>
+                      setActiveSectionIndex((prevIndex) =>
+                        Math.min(prevIndex + 1, sections.length - 1),
+                      )
+                    }
+                    className={`flex items-center gap-1 p-3 rounded-lg text-sm font-medium
+                  text-gray-600 hover:bg-gray-50 transition-all ${activeSectionIndex === sections.length - 1 && "opacity-50"}`}
+                    disabled={activeSectionIndex === sections.length - 1}
+                  >
+                    Next <ChevronRight className="size-4" />
+                  </button>
                 </div>
               </div>
             </div>
