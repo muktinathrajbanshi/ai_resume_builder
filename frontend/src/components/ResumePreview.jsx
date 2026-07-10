@@ -1,30 +1,29 @@
 import ClassicTemplate from "./templates/ClassicTemplate.js";
-import ClassicTemplate from "./templates/ClassicTemplate.js"
-import ClassicTemplate from "./templates/ClassicTemplate.js"
-import ClassicTemplate from "./templates/ClassicTemplate.js"
+import ModernTemplate from "./templates/ModernTemplate.js";
+import MinimalTemplate from "./templates/MinimalTemplate.js";
+import MinimalImageTemplate from "./templates/MinimalImageTemplate.js";
 
+const ResumePreview = ({ data, template, accentColor, classes = "" }) => {
+  const renderTemplate = () => {
+    switch (template) {
+      case "modern":
+        return <ModernTemplate data={data} accentColor={accentColor} />;
+      case "minimal":
+        return <MinimalTemplate data={data} accentColor={accentColor} />;
 
-const ResumePreview = ({data, template, accentColor, classes = ""}) => {
-
-    const renderTemplate = () => {
-        switch (template) {
-            case "modern":
-                return <Modern
-                
-                break;
-        
-            default:
-                break;
-        }
+      default:
+        break;
     }
+  };
 
   return (
     <div className="w-full bg-gray-100">
       <div
         id="resume-preview"
-        className={"border border-gray-200 print:shadow-none print:border-none" + classes}>
-
-      </div>
+        className={
+          "border border-gray-200 print:shadow-none print:border-none" + classes
+        }
+      ></div>
     </div>
   );
 };
