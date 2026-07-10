@@ -1,4 +1,11 @@
-import { User } from "lucide-react";
+import {
+  Linkedin,
+  BriefcaseBusiness,
+  Mail,
+  MapPin,
+  Phone,
+  User,
+} from "lucide-react";
 import React from "react";
 
 const PersonalInfoForm = ({
@@ -10,6 +17,39 @@ const PersonalInfoForm = ({
   const handleChange = (field, value) => {
     onChange({ ...data, [field]: value });
   };
+
+  const fields = [
+    {
+      key: "full_name",
+      label: "Full Name",
+      icon: User,
+      type: "text",
+      required: true,
+    },
+    {
+      key: "email",
+      label: "Email Address",
+      icon: Mail,
+      type: "email",
+      required: true,
+    },
+    { key: "phone", label: "Phone Number", icon: Phone, type: "tel" },
+    { key: "location", label: "Location", icon: MapPin, type: "text" },
+    {
+      key: "profession",
+      label: "Profession",
+      icon: BriefcaseBusiness,
+      type: "text",
+    },
+    {
+      key: "linkedin",
+      label: "LinkedIn Profile",
+      icon: Linkedin,
+      type: "url",
+      required: true,
+    },
+  ];
+
   return (
     <div>
       <h3 className="text-lg font-semibold text-gray-900">
