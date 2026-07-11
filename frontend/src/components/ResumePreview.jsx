@@ -1,7 +1,7 @@
-import ClassicTemplate from "./templates/ClassicTemplate.js";
-import ModernTemplate from "./templates/ModernTemplate.js";
-import MinimalTemplate from "./templates/MinimalTemplate.js";
-import MinimalImageTemplate from "./templates/MinimalImageTemplate.js";
+import ClassicTemplate from "./templates/ClassicTemplate";
+import ModernTemplate from "./templates/ModernTemplate";
+import MinimalTemplate from "./templates/MinimalTemplate";
+import MinimalImageTemplate from "./templates/MinimalImageTemplate";
 
 const ResumePreview = ({ data, template, accentColor, classes = "" }) => {
   const renderTemplate = () => {
