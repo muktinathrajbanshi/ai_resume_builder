@@ -1,3 +1,4 @@
+import { Layout } from "lucide-react";
 import { useState } from "react";
 
 const TemplateSelector = ({ selectedTemplated, onChange }) => {
@@ -21,9 +22,20 @@ const TemplateSelector = ({ selectedTemplated, onChange }) => {
       name: "Minimal Image",
       preview: "Minimal design with a single image and clean typography",
     },
+    {
+      id: "minimal",
+      name: "Minimal",
+      preview: "Ultra-clean design that puts your front and center",
+    },
   ];
 
-  return <div></div>;
+  return (
+    <div className="relative">
+      <button>
+        <Layout size={14} /> <span className="max-sm:hidden">Template</span>
+      </button>
+    </div>
+  );
 };
 
 export default TemplateSelector;
