@@ -21,7 +21,7 @@ const ProfessionalSummaryForm = ({ data, onChange, setResumeData }) => {
       <div className="mt-6">
         <textarea
           value={data || ""}
-          onChange={(e) => onChange(e.target)}
+          onChange={(e) => onChange(e.target.value)}
           rows={7}
           className="w-full p-3 px-4 mt-2 border text-sm border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:border-blue-500 
         outline-none transition-colors resize-none"
