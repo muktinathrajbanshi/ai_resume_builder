@@ -1,3 +1,5 @@
+import { Sparkles } from "lucide-react";
+
 const ProfessionalSummaryForm = ({ data, onChange, setResumeData }) => {
   return (
     <div className="space-y-4">
@@ -10,7 +12,14 @@ const ProfessionalSummaryForm = ({ data, onChange, setResumeData }) => {
             Add summary for your resume here
           </p>
         </div>
-        <button></button>
+        <button className="flex items-center gap-2 px-3 py-1 text-sm bg-purple-100 text-purple-700 rounded hover:bg-purple-200 transition-colors disabled:opacity-50">
+          <Sparkles className="size-4" />
+          AI Enhance
+        </button>
+      </div>
+
+      <div className="mt-6">
+        <textarea className="w-full p-3 px-4 mt-2 border text-sm border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none" />
       </div>
     </div>
   );
