@@ -58,9 +58,50 @@ const ExperienceForm = ({ data, onChange }) => {
             >
               <div className="flex justify-between items-start">
                 <h4>Experience #{index + 1}</h4>
-                <button>
-                  <Trash2 />
+                <button
+                  onClick={() => removeExperience(index)}
+                  className="text-red-500 hover:text-red-700 transition-colors"
+                >
+                  <Trash2 className="size-4" />
                 </button>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-3">
+                <input
+                  value={ExperienceForm.company || ""}
+                  onChange={(e) =>
+                    updateExperience(index, "company", e.target.value)
+                  }
+                  type="text"
+                  placeholder="Company Name"
+                  className="px-3 py-2 text-sm rounded-lg"
+                />
+                <input
+                  value={ExperienceForm.position || ""}
+                  onChange={(e) =>
+                    updateExperience(index, "position", e.target.value)
+                  }
+                  type="text"
+                  placeholder="Job Title"
+                  className="px-3 py-2 text-sm rounded-lg"
+                />
+                <input
+                  value={ExperienceForm.start_date || ""}
+                  onChange={(e) =>
+                    updateExperience(index, "start_date", e.target.value)
+                  }
+                  type="month"
+                  className="px-3 py-2 text-sm rounded-lg"
+                />
+                <input
+                  value={ExperienceForm.end_date || ""}
+                  onChange={(e) =>
+                    updateExperience(index, "end_date", e.target.value)
+                  }
+                  type="month"
+                  disabled={experience.is_current}
+                  className="px-3 py-2 text-sm rounded-lg disabled:bg-gray-100"
+                />
               </div>
             </div>
           ))}
