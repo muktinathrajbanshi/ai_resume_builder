@@ -51,7 +51,7 @@ const ExperienceForm = ({ data, onChange }) => {
         </div>
       ) : (
         <div className="space-y-4">
-          {data.map(() => (
+          {data.map((experience, index) => (
             <div
               key={index}
               className="p-4 border border-gray-200 rounded-lg space-y-3"
@@ -68,7 +68,7 @@ const ExperienceForm = ({ data, onChange }) => {
 
               <div className="grid md:grid-cols-2 gap-3">
                 <input
-                  value={ExperienceForm.company || ""}
+                  value={experience.company || ""}
                   onChange={(e) =>
                     updateExperience(index, "company", e.target.value)
                   }
@@ -77,7 +77,7 @@ const ExperienceForm = ({ data, onChange }) => {
                   className="px-3 py-2 text-sm rounded-lg"
                 />
                 <input
-                  value={ExperienceForm.position || ""}
+                  value={experience.position || ""}
                   onChange={(e) =>
                     updateExperience(index, "position", e.target.value)
                   }
@@ -86,7 +86,7 @@ const ExperienceForm = ({ data, onChange }) => {
                   className="px-3 py-2 text-sm rounded-lg"
                 />
                 <input
-                  value={ExperienceForm.start_date || ""}
+                  value={experience.start_date || ""}
                   onChange={(e) =>
                     updateExperience(index, "start_date", e.target.value)
                   }
@@ -94,7 +94,7 @@ const ExperienceForm = ({ data, onChange }) => {
                   className="px-3 py-2 text-sm rounded-lg"
                 />
                 <input
-                  value={ExperienceForm.end_date || ""}
+                  value={experience.end_date || ""}
                   onChange={(e) =>
                     updateExperience(index, "end_date", e.target.value)
                   }
