@@ -117,6 +117,9 @@ const ExperienceForm = ({ data, onChange }) => {
                   }}
                   className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                 />
+                <span className="text-sm text-gray-700">
+                  Currently working here
+                </span>
               </label>
             </div>
           ))}
