@@ -124,8 +124,10 @@ const ExperienceForm = ({ data, onChange }) => {
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <label>Job Description</label>
-                  <button>
+                  <label className="text-sm font-medium text-gray-700">
+                    Job Description
+                  </label>
+                  <button className="flex items-center gap-1 px-2 py-1 text-xs bg-purple-100 text-purple-700 rounded hover:bg-purple-200 transition-colors disabled:opacity-50">
                     <Sparkles className="w-3 h-3" />
                     Enhance with AI
                   </button>
