@@ -1,4 +1,4 @@
-import { Briefcase, Plus, Trash2 } from "lucide-react";
+import { Briefcase, Plus, Sparkles, Trash2 } from "lucide-react";
 
 const ExperienceForm = ({ data, onChange }) => {
   const addExperience = () => {
@@ -121,6 +121,16 @@ const ExperienceForm = ({ data, onChange }) => {
                   Currently working here
                 </span>
               </label>
+
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <label>Job Description</label>
+                  <button>
+                    <Sparkles className="w-3 h-3" />
+                    Enhance with AI
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
