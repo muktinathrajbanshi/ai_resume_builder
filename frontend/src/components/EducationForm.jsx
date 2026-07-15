@@ -1,24 +1,23 @@
 import React from "react";
 
 const EducationForm = ({ data, onChange }) => {
-  const addExperience = () => {
-    const newExperience = {
-      company: "",
-      position: "",
-      start_date: "",
-      end_date: "",
-      description: "",
-      is_current: false,
+  const addEducation = () => {
+    const newEducation = {
+      institution: "",
+      degree: "",
+      field: "",
+      graduation_date: "",
+      gpa: "",
     };
-    onChange([...data, newExperience]);
+    onChange([...data, newEducation]);
   };
 
-  const removeExperience = (index) => {
+  const removeEducation = (index) => {
     const updated = data.filter((_, i) => i !== index);
     onChange(updated);
   };
 
-  const updateExperience = (index, field, value) => {
+  const updateEducation = (index, field, value) => {
     const updated = [...data];
     updated[index] = { ...updated[index], [field]: value };
     onChange(updated);
