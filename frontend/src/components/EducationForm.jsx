@@ -51,15 +51,15 @@ const EducationForm = ({ data, onChange }) => {
         </div>
       ) : (
         <div className="space-y-4">
-          {data.map((experience, index) => (
+          {data.map((education, index) => (
             <div
               key={index}
               className="p-4 border border-gray-200 rounded-lg space-y-3"
             >
               <div className="flex justify-between items-start">
-                <h4>Experience #{index + 1}</h4>
+                <h4>Education #{index + 1}</h4>
                 <button
-                  onClick={() => removeExperience(index)}
+                  onClick={() => removeEducation(index)}
                   className="text-red-500 hover:text-red-700 transition-colors"
                 >
                   <Trash2 className="size-4" />
@@ -68,12 +68,12 @@ const EducationForm = ({ data, onChange }) => {
 
               <div className="grid md:grid-cols-2 gap-3">
                 <input
-                  value={experience.company || ""}
+                  value={education.institution || ""}
                   onChange={(e) =>
-                    updateExperience(index, "company", e.target.value)
+                    updateEducation(index, "institution", e.target.value)
                   }
                   type="text"
-                  placeholder="Company Name"
+                  placeholder="Institution Name"
                   className="px-3 py-2 text-sm rounded-lg"
                 />
                 <input
