@@ -82,8 +82,8 @@ const EducationForm = ({ data, onChange }) => {
                     updateExperience(index, "position", e.target.value)
                   }
                   type="text"
-                  placeholder="Job Title"
-                  className="px-3 py-2 text-sm rounded-lg"
+                  placeholder="Degree (e.g., Bachelor's, Master's)"
+                  className="px-3 py-2 text-sm"
                 />
                 <input
                   value={experience.start_date || ""}
