@@ -95,13 +95,13 @@ const EducationForm = ({ data, onChange }) => {
                   placeholder="Field of Study"
                 />
                 <input
-                  value={experience.end_date || ""}
+                  value={education.graduation_date || ""}
                   onChange={(e) =>
-                    updateExperience(index, "end_date", e.target.value)
+                    updateEducation(index, "graduation_date", e.target.value)
                   }
                   type="month"
                   disabled={experience.is_current}
-                  className="px-3 py-2 text-sm disabled:bg-gray-100"
+                  className="px-3 py-2 text-sm"
                 />
               </div>
 
