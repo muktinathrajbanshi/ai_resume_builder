@@ -77,21 +77,22 @@ const EducationForm = ({ data, onChange }) => {
                   className="px-3 py-2 text-sm"
                 />
                 <input
-                  value={experience.position || ""}
+                  value={education.degree || ""}
                   onChange={(e) =>
-                    updateExperience(index, "position", e.target.value)
+                    updateEducation(index, "degree", e.target.value)
                   }
                   type="text"
                   placeholder="Degree (e.g., Bachelor's, Master's)"
                   className="px-3 py-2 text-sm"
                 />
                 <input
-                  value={experience.start_date || ""}
+                  value={education.field || ""}
                   onChange={(e) =>
-                    updateExperience(index, "start_date", e.target.value)
+                    updateEducation(index, "field", e.target.value)
                   }
-                  type="month"
+                  type="text"
                   className="px-3 py-2 text-sm"
+                  placeholder="Field of Study"
                 />
                 <input
                   value={experience.end_date || ""}
