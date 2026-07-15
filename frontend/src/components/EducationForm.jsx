@@ -74,7 +74,7 @@ const EducationForm = ({ data, onChange }) => {
                   }
                   type="text"
                   placeholder="Institution Name"
-                  className="px-3 py-2 text-sm rounded-lg"
+                  className="px-3 py-2 text-sm"
                 />
                 <input
                   value={experience.position || ""}
@@ -91,7 +91,7 @@ const EducationForm = ({ data, onChange }) => {
                     updateExperience(index, "start_date", e.target.value)
                   }
                   type="month"
-                  className="px-3 py-2 text-sm rounded-lg"
+                  className="px-3 py-2 text-sm"
                 />
                 <input
                   value={experience.end_date || ""}
@@ -100,7 +100,7 @@ const EducationForm = ({ data, onChange }) => {
                   }
                   type="month"
                   disabled={experience.is_current}
-                  className="px-3 py-2 text-sm rounded-lg disabled:bg-gray-100"
+                  className="px-3 py-2 text-sm disabled:bg-gray-100"
                 />
               </div>
 
