@@ -1,4 +1,4 @@
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Plus, Trash2 } from "lucide-react";
 import React from "react";
 
 const EducationForm = ({ data, onChange }) => {
