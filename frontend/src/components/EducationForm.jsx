@@ -100,28 +100,17 @@ const EducationForm = ({ data, onChange }) => {
                     updateEducation(index, "graduation_date", e.target.value)
                   }
                   type="month"
-                  disabled={experience.is_current}
                   className="px-3 py-2 text-sm"
                 />
               </div>
 
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={experience.is_current || false}
-                  onChange={(e) => {
-                    updateExperience(
-                      index,
-                      "is_current",
-                      e.target.checked ? true : false,
-                    );
-                  }}
-                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                />
-                <span className="text-sm text-gray-700">
-                  Currently working here
-                </span>
-              </label>
+              <input
+                value={education.gpa || ""}
+                onChange={(e) => updateEducation(index, "gpa", e.target.value)}
+                type="text"
+                className="px-3 py-2 text-sm"
+                placeholder="GPA (optional)"
+              />
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
