@@ -59,31 +59,20 @@ const ProjectForm = ({ data, onChange }) => {
             <div className="grid md:grid-cols-2 gap-3">
               <input
                 value={project.name || ""}
-                onChange={(e) =>
-                  updateEducation(index, "institution", e.target.value)
-                }
+                onChange={(e) => updateProject(index, "name", e.target.value)}
                 type="text"
-                placeholder="Institution Name"
-                className="px-3 py-2 text-sm"
+                placeholder="Project Name"
+                className="px-3 py-2 text-sm rounded-lg"
               />
+
               <input
-                value={education.degree || ""}
-                onChange={(e) =>
-                  updateEducation(index, "degree", e.target.value)
-                }
+                value={project.type || ""}
+                onChange={(e) => updateProject(index, "type", e.target.value)}
                 type="text"
-                placeholder="Degree (e.g., Bachelor's, Master's)"
-                className="px-3 py-2 text-sm"
+                placeholder="Project Type"
+                className="px-3 py-2 text-sm rounded-lg"
               />
-              <input
-                value={education.field || ""}
-                onChange={(e) =>
-                  updateEducation(index, "field", e.target.value)
-                }
-                type="text"
-                className="px-3 py-2 text-sm"
-                placeholder="Field of Study"
-              />
+
               <input
                 value={education.graduation_date || ""}
                 onChange={(e) =>
