@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 
 const ProjectForm = ({ data, onChange }) => {
   const addProject = () => {
@@ -40,16 +40,16 @@ const ProjectForm = ({ data, onChange }) => {
         </button>
       </div>
 
-      <div className="space-y-4">
-        {data.map((education, index) => (
+      <div className="space-y-4 mt-6">
+        {data.map((project, index) => (
           <div
             key={index}
             className="p-4 border border-gray-200 rounded-lg space-y-3"
           >
             <div className="flex justify-between items-start">
-              <h4>Education #{index + 1}</h4>
+              <h4>Project #{index + 1}</h4>
               <button
-                onClick={() => removeEducation(index)}
+                onClick={() => removeProject(index)}
                 className="text-red-500 hover:text-red-700 transition-colors"
               >
                 <Trash2 className="size-4" />
@@ -58,7 +58,7 @@ const ProjectForm = ({ data, onChange }) => {
 
             <div className="grid md:grid-cols-2 gap-3">
               <input
-                value={education.institution || ""}
+                value={project.name || ""}
                 onChange={(e) =>
                   updateEducation(index, "institution", e.target.value)
                 }
