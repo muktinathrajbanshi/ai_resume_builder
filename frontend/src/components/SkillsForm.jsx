@@ -21,8 +21,20 @@ const SkillsForm = ({ data, onChange }) => {
   return (
     <div className="space-y-4">
       <div>
-        <h3> Skills </h3>
-        <p>Add your technical and soft skills</p>
+        <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-900">
+          {" "}
+          Skills{" "}
+        </h3>
+        <p className="text-sm text-gray-500">
+          Add your technical and soft skills
+        </p>
+      </div>
+
+      <div className="flex gap-2">
+        <input
+          type="text"
+          placeholder="Enter a skill (e.g., JavaScript, Project Management"
+        />
       </div>
     </div>
   );
