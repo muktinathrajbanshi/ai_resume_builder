@@ -79,19 +79,10 @@ const ProjectForm = ({ data, onChange }) => {
                 onChange={(e) =>
                   updateProject(index, "description", e.target.value)
                 }
-                type="text"
-                placeholder="Project Type"
-                className="px-3 py-2 text-sm rounded-lg"
+                placeholder="Describe your project..."
+                className="w-full px-3 py-2 text-sm rounded-lg resize-none"
               />
             </div>
-
-            <input
-              value={education.gpa || ""}
-              onChange={(e) => updateEducation(index, "gpa", e.target.value)}
-              type="text"
-              className="px-3 py-2 text-sm"
-              placeholder="GPA (optional)"
-            />
           </div>
         ))}
       </div>
