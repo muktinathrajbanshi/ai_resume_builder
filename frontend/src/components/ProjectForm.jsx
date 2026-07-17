@@ -73,13 +73,15 @@ const ProjectForm = ({ data, onChange }) => {
                 className="px-3 py-2 text-sm rounded-lg"
               />
 
-              <input
-                value={education.graduation_date || ""}
+              <textarea
+                rows={4}
+                value={project.description || ""}
                 onChange={(e) =>
-                  updateEducation(index, "graduation_date", e.target.value)
+                  updateProject(index, "description", e.target.value)
                 }
-                type="month"
-                className="px-3 py-2 text-sm"
+                type="text"
+                placeholder="Project Type"
+                className="px-3 py-2 text-sm rounded-lg"
               />
             </div>
 
