@@ -1,3 +1,5 @@
+import { Plus } from "lucide-react";
+
 const SkillsForm = ({ data, onChange }) => {
   const [newSkill, setNewSkill] = useState("");
 
@@ -34,7 +36,17 @@ const SkillsForm = ({ data, onChange }) => {
         <input
           type="text"
           placeholder="Enter a skill (e.g., JavaScript, Project Management"
+          className="flex-1 px-3 py-2 text-sm"
+          onChange={(e) => setNewSkill(e.target.value)}
+          value={newSkill}
+          onKeyDown={handleKeyPress}
         />
+        <button
+          className="flex items-center gap-2 px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors
+        disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <Plus size={4} /> Add
+        </button>
       </div>
     </div>
   );
