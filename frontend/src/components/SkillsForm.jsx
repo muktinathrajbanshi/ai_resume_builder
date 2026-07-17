@@ -18,7 +18,14 @@ const SkillsForm = ({ data, onChange }) => {
       addSkill();
     }
   };
-  return <div></div>;
+  return (
+    <div className="space-y-4">
+      <div>
+        <h3> Skills </h3>
+        <p>Add your technical and soft skills</p>
+      </div>
+    </div>
+  );
 };
 
 export default SkillsForm;
