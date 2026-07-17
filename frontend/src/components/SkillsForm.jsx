@@ -3,7 +3,13 @@ const SkillsForm = ({ data, onChange }) => {
 
   const addSkill = () => {
     if (newSkill.trim() && !data.includes(newSkill.trim())) {
+      onChange([...data, newSkill.trim()]);
+      setNewSkill("");
     }
+  };
+
+  const removeSkill = (indexToRemove) => {
+    onChange(data.filter((_, index) => index !== indexToRemove));
   };
   return <div></div>;
 };
