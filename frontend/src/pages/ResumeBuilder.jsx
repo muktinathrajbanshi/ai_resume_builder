@@ -222,12 +222,13 @@ const ResumeBuilder = () => {
                     <Share2Icon className="size-4" />
                   </button>
                 )}
-                <button>
+                <button className="flex items-center p-2 px-4 gap-2 text-xs bg-gradient-to-br from-purple-100 to-purple-200 text-purple-600 ring-purple-300 rounded-lg hover:ring transition-colors">
                   {resumeData.public ? (
                     <EyeIcon className="size-4" />
                   ) : (
                     <EyeOffIcon className="size-4" />
                   )}
+                  {resumeData.public ? "Public" : "Private"}
                 </button>
               </div>
             </div>
