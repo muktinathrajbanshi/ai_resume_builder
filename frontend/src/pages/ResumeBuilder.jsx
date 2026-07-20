@@ -6,6 +6,8 @@ import {
   Briefcase,
   ChevronLeft,
   ChevronRight,
+  EyeIcon,
+  EyeOffIcon,
   FileText,
   FolderIcon,
   GraduationCap,
@@ -220,6 +222,13 @@ const ResumeBuilder = () => {
                     <Share2Icon className="size-4" />
                   </button>
                 )}
+                <button>
+                  {resumeData.public ? (
+                    <EyeIcon className="size-4" />
+                  ) : (
+                    <EyeOffIcon className="size-4" />
+                  )}
+                </button>
               </div>
             </div>
 
