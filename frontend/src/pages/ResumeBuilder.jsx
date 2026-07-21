@@ -69,6 +69,14 @@ const ResumeBuilder = () => {
     loadExistingResume();
   }, []);
 
+  const changeResumeVisibility = async () => {
+    setResumeData({ ...resumeData, public: !resumeData.public });
+  };
+
+  const handleShare = () => {
+    const frontendUrl = window.location.href.split("/app/")[0];
+  };
+
   return (
     <div>
       <div className="max-w-7xl mx-auto px-4 py-6">
