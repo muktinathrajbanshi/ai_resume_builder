@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { dummyResumeData } from "../assets/assets";
 import { useParams } from "react-router-dom";
+import ResumePreview from "../components/ResumePreview";
 
 const Preview = () => {
   const { resumeId } = useParams();
@@ -16,11 +17,17 @@ const Preview = () => {
     loadResume();
   }, []);
 
-  return (
-    <div>
-      <h1>Preview Page</h1>
+
+
+  return resumeData ? (
+    <div className="bg-slate-100">
+      <div className="max-w-3xl mx-auto py-10">
+        <ResumePreview />
+      </div>
     </div>
-  );
+  ) : (
+
+  )
 };
 
 export default Preview;
