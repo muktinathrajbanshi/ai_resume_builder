@@ -38,8 +38,10 @@ const Preview = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div>
-          <p>Resume not found</p>
+        <div className="flex flex-col items-center justify-center h-screen">
+          <p className="text-center text-6xl text-slate-400 font-medium">
+            Resume not found
+          </p>
           <a href="">
             <ArrowLeftIcon className="mr-2 size-4" /> go to home page
           </a>
