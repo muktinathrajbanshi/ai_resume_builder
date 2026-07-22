@@ -3,6 +3,7 @@ import { dummyResumeData } from "../assets/assets";
 import { useParams } from "react-router-dom";
 import ResumePreview from "../components/ResumePreview";
 import Loader from "../components/loader";
+import { ArrowLeftIcon } from "lucide-react";
 
 const Preview = () => {
   const { resumeId } = useParams();
@@ -33,7 +34,18 @@ const Preview = () => {
       </div>
     </div>
   ) : (
-    <div>{isLoading ? <Loader /> : <div></div>}</div>
+    <div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div>
+          <p>Resume not found</p>
+          <a href="">
+            <ArrowLeftIcon className="mr-2 size-4" /> go to home page
+          </a>
+        </div>
+      )}
+    </div>
   );
 };
 
