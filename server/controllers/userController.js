@@ -81,6 +81,12 @@ export const getUserById = async (req, res) => {
   try {
     const userId = req.userId;
 
+    // check if user exists
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: error.message });
+    }
+
     return res
       .status(200)
       .json({ message: "Login successful", token, user: user });
