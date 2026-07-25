@@ -74,3 +74,17 @@ export const loginUser = async (req, res) => {
     return res.status(400).json({ message: error.message });
   }
 };
+
+// controller for getting user by id
+// GET: /api/users/data
+export const getUserById = async (req, res) => {
+  try {
+    const userId = req.userId;
+
+    return res
+      .status(200)
+      .json({ message: "Login successful", token, user: user });
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
+};
