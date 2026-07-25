@@ -52,15 +52,15 @@ export const loginUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    // check if required fields are present
-    if (!name || !email || !password) {
-      return res.status(400).json({ message: "Missing required fields" });
+    // check if user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    // check if user already exists
-    const user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ message: "User already exists" });
+    // check if password is correct
+    if (!user.comparePassword(password)) {
+      return res.status(400).json({ message: "Invalid email or password" });
     }
 
     // create new user
