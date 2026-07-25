@@ -63,21 +63,13 @@ export const loginUser = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    // create new user
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = await User.create({
-      name,
-      email,
-      password: hashedPassword,
-    });
-
     // return success message
-    const token = generateToken(newUser._id);
-    newUser.password = undefined;
+    const token = generateToken(user._id);
+    user.password = undefined;
 
     return res
-      .status(201)
-      .json({ message: "User created successfully", token, user: newUser });
+      .status(200)
+      .json({ message: "Login successful", token, user: user });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }
