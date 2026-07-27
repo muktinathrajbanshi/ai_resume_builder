@@ -8,5 +8,21 @@ const resumeSchema = new mongoose.Schema({
   accent_color: { type: String, default: "#3B82F6" },
   professional_summary: { type: String, default: "" },
   skills: [{ type: String }],
-  personal_info: {},
+  personal_info: {
+    image: { type: String, default: "" },
+    full_name: { type: String, default: "" },
+    profession: { type: String, default: "" },
+    email: { type: String, default: "" },
+    phone: { type: String, default: "" },
+    location: { type: String, default: "" },
+    linkedin: { type: String, default: "" },
+    website: { type: String, default: "" },
+  },
+  experience: [
+    {
+      company: { type: String },
+      position: { type: String },
+      start_date: { type: String },
+    },
+  ],
 });
