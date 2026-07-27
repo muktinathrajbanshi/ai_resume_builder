@@ -56,3 +56,12 @@ export const getResumeById = async (req, res) => {
     return res.status(400).json({ message: error.message });
   }
 };
+
+// get resume by id public
+// GET: /api/resumes/public
+export const getPublicResumeById = async (req, res) => {
+  try {
+    const { resumeId } = req.params;
+    const resume = await Resume.findOne({ public: true, _id: resumeId });
+  } catch (error) {}
+};
