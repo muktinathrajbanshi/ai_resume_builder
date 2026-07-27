@@ -47,6 +47,10 @@ export const getResumeById = async (req, res) => {
       return res.status(404).json({ message: "Resume not found" });
     }
 
+    resume.__v = undefined;
+    resume.createdAt = undefined;
+    resume.updatedAt = undefined;
+
     return res.status(200).json({ resume });
   } catch (error) {
     return res.status(400).json({ message: error.message });
