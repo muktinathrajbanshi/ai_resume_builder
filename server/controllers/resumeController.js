@@ -84,6 +84,13 @@ export const getPublicResumeById = async (req, res) => {
 
     let resumeDataCopy = JSON.parse(resumeData);
 
+    if (image) {
+      const response = await client.files.upload({
+        file: fs.createReadStream("path/to/file"),
+        fileName: "file-name.jpg",
+      });
+    }
+
     const resume = await Resume.findByIdAndUpdate(
       { userId, _id: resumeId },
       resumeDataCopy,
