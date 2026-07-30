@@ -78,7 +78,7 @@ export const getPublicResumeById = async (req, res) => {
 
 // controller for updating a resume
 // PUT: /api/resumes/update
-export const getPublicResumeById = async (req, res) => {
+export const updateResume = async (req, res) => {
   try {
     const userId = req.userId;
     const { resumeId, resumeData, removeBackground } = req.body;
