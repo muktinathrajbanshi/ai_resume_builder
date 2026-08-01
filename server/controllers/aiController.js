@@ -125,6 +125,9 @@ export const uploadResume = async (req, res) => {
     }
     `;
 
+    console.log("BASE URL:", process.env.OPENAI_BASE_URL);
+    console.log("MODEL:", process.env.OPENAI_MODEL);
+
     const response = await ai.chat.completions.create({
       model: process.env.OPENAI_MODEL,
       messages: [
@@ -146,6 +149,7 @@ export const uploadResume = async (req, res) => {
 
     res.json({ resumeId: newResume._id });
   } catch (error) {
+    console.log(error);
     return res.status(400).json({ message: error.message });
   }
 };
