@@ -80,7 +80,14 @@ const ResumeBuilder = () => {
   }, []);
 
   const changeResumeVisibility = async () => {
-    setResumeData({ ...resumeData, public: !resumeData.public });
+    try {
+      const formData = new FormData();
+      formData.append("resumeId", resumeId);
+      formData.append(
+        "resumeData",
+        JSON.stringify({ public: !resumeData.public }),
+      );
+    } catch (error) {}
   };
 
   const handleShare = () => {
