@@ -129,7 +129,16 @@ const ResumeBuilder = () => {
       removeBackground && formData.append("removeBackground", "yes");
       typeof resumeData.personal_info.image === "object" &&
         formData.append("image", resumeData.personal_info.image);
-    } catch (error) {}
+
+      const { data } = await api.put("/api/resumes/update", formData, {
+        headers: { Authorization: token },
+      });
+
+      setResumeData(data.resume);
+      toast.success(data.message);
+    } catch (error) {
+      console.error("Error saving resume:", error);
+    }
   };
 
   return (
