@@ -126,6 +126,9 @@ const ResumeBuilder = () => {
       const formData = new FormData();
       formData.append("resumeId", resumeId);
       formData.append("resumeData", JSON.stringify(updatedResumeData));
+      removeBackground && formData.append("removeBackground", "yes");
+      typeof resumeData.personal_info.image === "object" &&
+        formData.append("image", resumeData.personal_info.image);
     } catch (error) {}
   };
 
