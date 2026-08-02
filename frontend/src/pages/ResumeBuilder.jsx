@@ -94,7 +94,9 @@ const ResumeBuilder = () => {
 
       setResumeData({ ...resumeData, public: !resumeData.public });
       toast.success(data.message);
-    } catch (error) {}
+    } catch (error) {
+      console.error("Error saving resume:", error);
+    }
   };
 
   const handleShare = () => {
@@ -110,6 +112,14 @@ const ResumeBuilder = () => {
 
   const downloadResume = () => {
     window.print();
+  };
+
+  const saveResume = async () => {
+    try {
+      let updatedResumeData = structuredClone(resumeData);
+
+      // remove image from updatedResumeData
+    } catch (error) {}
   };
 
   return (
