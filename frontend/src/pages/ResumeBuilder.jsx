@@ -119,6 +119,13 @@ const ResumeBuilder = () => {
       let updatedResumeData = structuredClone(resumeData);
 
       // remove image from updatedResumeData
+      if (typeof resumeData.personal_info.image === "object") {
+        delete updatedResumeData.personal_info.image;
+      }
+
+      const formData = new FormData();
+      formData.append("resumeId", resumeId);
+      formData.append("resumeData", JSON.stringify(updatedResumeData));
     } catch (error) {}
   };
 
