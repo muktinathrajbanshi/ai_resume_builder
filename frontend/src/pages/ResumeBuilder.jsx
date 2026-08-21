@@ -28,6 +28,8 @@ import SkillsForm from "../components/SkillsForm";
 import { useSelector } from "react-redux";
 import api from "../configs/api";
 
+import { toast } from "react-hot-toast";
+
 const ResumeBuilder = () => {
   const { resumeId } = useParams();
 
@@ -137,7 +139,8 @@ const ResumeBuilder = () => {
       setResumeData(data.resume);
       toast.success(data.message);
     } catch (error) {
-      console.error("Error saving resume:", error);
+      console.error("Error saving resume:", error.response?.data);
+      console.error(error.message);
     }
   };
 
