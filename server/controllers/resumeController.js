@@ -84,16 +84,16 @@ export const updateResume = async (req, res) => {
     const { resumeId, resumeData, removeBackground } = req.body;
     const image = req.file;
 
-    let resumeDataCopy;
-    if (typeof resumeData === "string") {
-      resumeDataCopy = await JSON.parse(resumeData);
-    } else {
-      resumeDataCopy = structuredClone(resumeData);
-    }
+    // let resumeDataCopy;
+    // if (typeof resumeData === "string") {
+    //   resumeDataCopy = await JSON.parse(resumeData);
+    // } else {
+    //   resumeDataCopy = structuredClone(resumeData);
+    // }
 
-    // let resumeDataCopy = JSON.parse(resumeData);
+    let resumeDataCopy = JSON.parse(resumeData);
     // Never update MongoDB's _id
-    // delete resumeDataCopy._id;
+    delete resumeDataCopy._id;
 
     if (image) {
       const imageBufferData = fs.createReadStream(image.path);
@@ -112,17 +112,17 @@ export const updateResume = async (req, res) => {
       resumeDataCopy.personal_info.image = response.url;
     }
 
-    const resume = await Resume.findByIdAndUpdate(
-      { userId, _id: resumeId },
-      resumeDataCopy,
-      { new: true },
-    );
-
-    // const resume = await Resume.findOneAndUpdate(
+    // const resume = await Resume.findByIdAndUpdate(
     //   { userId, _id: resumeId },
     //   resumeDataCopy,
-    //   { returnDocument: "after" },
+    //   { new: true },
     // );
+
+    const resume = await Resume.findOneAndUpdate(
+      { userId, _id: resumeId },
+      resumeDataCopy,
+      { returnDocument: "after" },
+    );
 
     return res.status(200).json({ message: "Saved successfully", resume });
   } catch (error) {

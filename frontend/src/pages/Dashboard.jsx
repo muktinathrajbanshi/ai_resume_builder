@@ -42,14 +42,37 @@ const Dashboard = () => {
     }
   };
 
+  // const createResume = async (event) => {
+  //   try {
+  //     event.preventDefault();
+  //     const { data } = await api.post(
+  //       "/api/resumes/create",
+  //       { title },
+  //       { headers: { Authorization: token } },
+  //     );
+  //     setAllResumes([...allResumes, data.resume]);
+  //     setTitle("");
+  //     setShowCreateResume(false);
+  //     navigate(`/app/builder/${data.resume._id}`);
+  //   } catch (error) {
+  //     toast.error(error?.response?.data?.message || error.message);
+  //   }
+  // };
+
   const createResume = async (event) => {
     try {
       event.preventDefault();
+
+      console.log("Title being sent:", title);
+
       const { data } = await api.post(
         "/api/resumes/create",
         { title },
         { headers: { Authorization: token } },
       );
+
+      console.log("Created resume:", data.resume);
+
       setAllResumes([...allResumes, data.resume]);
       setTitle("");
       setShowCreateResume(false);
