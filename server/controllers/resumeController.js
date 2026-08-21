@@ -87,6 +87,9 @@ export const updateResume = async (req, res) => {
     // let resumeDataCopy = JSON.parse(JSON.stringify(resumeData));
     let resumeDataCopy = JSON.parse(resumeData);
 
+    // Never update MongoDB's _id
+    delete resumeDataCopy._id;
+
     if (image) {
       const imageBufferData = fs.createReadStream(image.path);
 
