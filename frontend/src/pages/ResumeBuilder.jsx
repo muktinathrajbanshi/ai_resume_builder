@@ -120,6 +120,9 @@ const ResumeBuilder = () => {
     try {
       let updatedResumeData = structuredClone(resumeData);
 
+      console.log("resumeId:", resumeId);
+      console.log("resumeData._id:", resumeData._id);
+
       // remove image from updatedResumeData
       if (typeof resumeData.personal_info.image === "object") {
         delete updatedResumeData.personal_info.image;
@@ -131,6 +134,11 @@ const ResumeBuilder = () => {
       removeBackground && formData.append("removeBackground", "yes");
       typeof resumeData.personal_info.image === "object" &&
         formData.append("image", resumeData.personal_info.image);
+
+      console.log("Sending resumeId:", resumeId);
+      console.log("Sending resumeData:", updatedResumeData);
+      console.log("FormData resumeId:", formData.get("resumeId"));
+      console.log("FormData resumeData:", formData.get("resumeData"));
 
       const { data } = await api.put("/api/resumes/update", formData, {
         headers: { Authorization: token },
